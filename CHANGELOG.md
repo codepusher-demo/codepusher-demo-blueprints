@@ -1,3 +1,10 @@
+# 1.0.0 (2024-08-30)
+
+
+### Bug Fixes
+
+* **url:** fix url ([b948543](https://github.com/codepusher-demo/codepusher-demo-blueprints/commit/b948543b5a38a8853bcc6672012d491f3c082ed5))
+
 ## [0.3.22](https://github.com/chip-labs/codepusher-blueprints-aws/compare/v0.3.21...v0.3.22) (2024-08-29)
 
 
