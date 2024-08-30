@@ -10,7 +10,7 @@ metadata:
     - service
     - api
 spec:
-  templateUrl: "https://github.com/codepusher-platform/codepusher-blueprints-aws/blob/main/github/nodejs/node-express/template"
+  templateUrl: "https://github.com/codepusher-demo/codepusher-demo-blueprints/blob/main/github/nodejs/node-express/template"
   provider: github
   owner: codepusher-team
   language: nodejs

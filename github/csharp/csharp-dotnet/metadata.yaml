@@ -11,7 +11,7 @@ metadata:
     - service
     - api
 spec:
-  templateUrl: "https://github.com/codepusher-platform/codepusher-blueprints-aws/blob/main/github/csharp/csharp-dotnet/template" # Replace with your actual template URL
+  templateUrl: "https://github.com/codepusher-demo/codepusher-demo-blueprints/blob/main/github/csharp/csharp-dotnet/template" # Replace with your actual template URL
   provider: github
   owner: codepusher-developers
   type: service

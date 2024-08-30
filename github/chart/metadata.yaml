@@ -8,7 +8,7 @@ metadata:
     - aws
     - eks
 spec:
-  templateUrl: "https://github.com/codepusher-platform/codepusher-blueprints-aws/blob/main/github/chart/template"
+  templateUrl: "https://github.com/codepusher-demo/codepusher-demo-blueprints/blob/main/github/chart/template"
   provider: aws
   owner: codepusher-team
   type: chart
