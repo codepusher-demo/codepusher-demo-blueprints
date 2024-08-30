@@ -1,5 +1,5 @@
 module "aws_rds" {
-  source = "git::https://github.com/codepusher-platform/codepusher-blueprints-aws.git//terraform/rds/module?ref={{ .moduleVersion }}"
+  source = "git::https://github.com/codepusher-demo/codepusher-demo-blueprints.git//terraform/rds/module?ref={{ .moduleVersion }}"
 
   db_name                       = "{{ .name }}"
   service_role                  = "{{ .serviceRole }}"
