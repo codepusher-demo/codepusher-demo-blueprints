@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/codepusher-demo/codepusher-demo-blueprints/compare/v1.1.1...v1.1.2) (2024-08-30)
+
+
+### Bug Fixes
+
+* **allmetadata:** fix all metadata ([5cc1776](https://github.com/codepusher-demo/codepusher-demo-blueprints/commit/5cc17766cad60664932c2c6c2dfe42549b90a7a0))
+
 # 1.0.0 (2024-08-30)
 
 
