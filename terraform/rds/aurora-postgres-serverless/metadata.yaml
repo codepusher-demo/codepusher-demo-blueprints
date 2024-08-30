@@ -1,0 +1,107 @@
+apiVersion: codepusher.io/v1alpha1
+kind: template
+metadata:
+  name: codepusher-aws-terraform-rds-aurora-serverlessV2
+  displayName: Create a RDS Aurora ServerlessV2
+  description: The Codepusher AWS terraform RDS Aurora template
+  tags:
+    - aws
+    - terraform
+    - rds
+    - aurora
+spec:
+  templateUrl: "https://github.com/codepusher-platform/codepusher-blueprints-aws/blob/main/terraform/rds/template"
+  provider: aws
+  owner: codepusher-team
+  type: resource
+  engine: 
+    type: opentofu
+    version: "1.17"
+  steps:
+    - title: RDS Configuration
+      properties:
+        name:
+          title: Database Name
+          type: string
+          description: "The name of the database to create."
+        maxCapacity:
+          title: Maximum Capacity (ServerlessV2)
+          type: number
+          default: 1
+          description: "The maximum capacity for the ServerlessV2 scaling configuration."
+        minCapacity:
+          title: Minimum Capacity (ServerlessV2)
+          type: number
+          default: 0.5
+          description: "The minimum capacity for the ServerlessV2 scaling configuration." 
+        resourceType:
+          title: Resource Type
+          type: select
+          items:
+            - "DynamoDB"
+            - "S3"
+            - "Postgres"
+        internetFacing:
+          title: Internet Facing
+          type: boolean
+          default: false
+        environmentName:
+          title: Select Environment
+          type: select
+          items:
+            type: list:environment
+        deployment:
+          title: Select Deployment
+          type: select
+          dependsOn: environmentName
+          items:
+            type: list:deployment
+        serviceRole:
+          type: get:deployment:serviceRole
+          autofill: true
+        instanceType:
+          type: string
+          autofill: true
+          default: "db.serveless"
+        engine:
+          type: string
+          autofill: true
+          default: "aurora-postgresql"
+        engineVersion:
+          type: string
+          autofill: true
+          default: "15.3"
+        clusterFamily:
+          type: string
+          autofill: true
+          default: "aurora-postgresql15"
+        clusterSize:
+          type: defaultValue
+          default: 1
+          autofill: true
+        vpcId:
+          type: get:environment:vpcId
+          autofill: true
+        vpcSubnetIds:
+          type: get:environment:vpcPrivateSubnetIds
+          autofill: true
+        vpcDefaultSecurityGroupId:
+          type: get:environment:vpcDefaultSecurityGroupId
+          autofill: true
+        owner:
+          title: Owner
+          type: select
+          items:
+            type: list:team
+        region:
+          type: get:environment:region
+          autofill: true
+        roleArn:
+          type: get:environment:roleArn
+          autofill: true
+        stateBucket:
+          type: get:environment:stateBucket
+          autofill: true
+        stateTable:
+          type: get:environment:stateTable
+          autofill: true

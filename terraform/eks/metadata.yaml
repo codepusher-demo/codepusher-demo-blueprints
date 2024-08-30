@@ -1,0 +1,78 @@
+apiVersion: codepusher.io/v1alpha1
+kind: template
+metadata:
+  name: codepusher-aws-terraform-eks
+  description: The Codepusher AWS terraform EKS template
+  tags:
+    - aws
+    - terraform
+    - eks
+spec:
+  templateUrl: "https://github.com/codepusher-platform/codepusher-blueprints-aws/blob/main/terraform/eks/template"  
+  owner: codepusher-team
+  provider: aws
+  type: cluster
+  engine: 
+    type: opentofu
+    version: "1.17"
+  steps:
+    - title: EKS Details
+      properties:
+        clusterName:
+          title: Name
+          type: string
+        clusterVersion:
+          title: Version
+          type: string
+        instanceTypes:
+          title: Instance Types
+          type: multi-select
+          items:
+            - "m6i.large"
+            - "m5.large"
+            - "m5n.large"
+            - "m5zn.large"
+        instanceClass:
+          title: Instance Class
+          type: select
+          items:
+            - "ON_DEMAND"
+            - "SPOT"
+        minNodes:
+          title: Min Nodes
+          type: int
+        desiredNodes:
+          title: Desired Nodes
+          type: int
+        maxNodes:
+          title: Max Nodes
+          type: int
+        diskCapacity:
+          title: Disk Capacity (GB)
+          type: int  
+        owner:
+          title: Owner
+          type: select
+          items:
+            type: list:team
+        vpcId:
+          type: get:environment:vpcId
+          autofill: true
+        vpcPrivateSubnetIds:
+          type: get:environment:vpcPrivateSubnetIds
+          autofill: true
+        region:
+          type: get:environment:region
+          autofill: true
+        environmentName:
+          type: get:environment:environmentName
+          autofill: true
+        roleArn:
+          type: get:cloudAccount:roleArn
+          autofill: true
+        stateBucket:
+          type: get:cloudAccount:stateBucket
+          autofill: true
+        stateTable:
+          type: get:cloudAccount:stateTable
+          autofill: true

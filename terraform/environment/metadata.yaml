@@ -1,0 +1,54 @@
+apiVersion: codepusher.io/v1alpha1
+kind: template
+metadata:
+  name: codepusher-aws-terraform-environment
+  description: The Codepusher AWS terraform environment template
+  tags:
+    - aws
+    - terraform
+spec:
+  templateUrl: "https://github.com/codepusher-platform/codepusher-blueprints-aws/blob/main/terraform/environment/template"
+  provider: aws
+  owner: codepusher-team
+  type: environment
+  engine: 
+    type: opentofu
+    version: "1.17"
+  steps:
+    - title: Environment Details
+      properties:
+        cloudAccountId:
+          title: AWS Account
+          type: select
+          items:
+            type: list:cloudAccount
+        name:
+          title: Environment Name
+          type: string
+        region:
+          title: AWS Region
+          type: select
+          default: us-east-1   
+          items:
+            - us-east-1
+            - us-east-2
+            - us-west-1
+            - us-west-2
+        vpcCidr:
+          title: VPC CIDR
+          default: "10.0.0.0/16"
+          type: string
+        owner:
+          title: Owner
+          type: select
+          items:
+            type: list:team
+        roleArn:
+          type: get:cloudAccount:roleArn
+          autofill: true
+        stateBucket:
+          type: get:cloudAccount:stateBucket
+          autofill: true
+        stateTable:
+          type: get:cloudAccount:stateTable
+          autofill: true

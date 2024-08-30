@@ -1,0 +1,39 @@
+apiVersion: codepusher.io/v1alpha1
+kind: template
+metadata:
+  name: python-fastapi-service
+  displayName: Scaffold a new Python+FastAPI service
+  description: Quickly set up a new Python FastAPI project with this template.
+  tags:
+    - python
+    - fastapi
+    - service
+    - api
+spec:
+  templateUrl: "https://github.com/codepusher-platform/codepusher-blueprints-aws/blob/main/github/python/python-fastapi/template"
+  provider: github
+  owner: codepusher-team
+  type: service
+  language: python
+  engine:
+    type: github
+    version: "1.0.0"
+  steps:
+    - title: Basic Information
+      properties:
+        serviceName:
+          title: Service Name (K8s)
+          type: string
+          description: "Unique name for your FastAPI service within Kubernetes (e.g., 'my-fastapi-app')."
+        project:
+          title: Project Name (GitHub)
+          type: string
+          description: "The name of your GitHub repository where your FastAPI project's code resides."
+        owner:
+          title: Owner
+          type: select
+          items:
+            type: list:team
+        githubOrg:
+          type: get:integration:githubOrg
+          autofill: true
