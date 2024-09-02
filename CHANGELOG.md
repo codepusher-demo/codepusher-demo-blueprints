@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/codepusher-demo/codepusher-demo-blueprints/compare/v1.1.2...v1.1.3) (2024-09-02)
+
+
+### Bug Fixes
+
+* **rds:** add comment ([0f0257d](https://github.com/codepusher-demo/codepusher-demo-blueprints/commit/0f0257dcd3b5a38bad4abb6061e0168b67f5a405))
+
 ## [1.1.2](https://github.com/codepusher-demo/codepusher-demo-blueprints/compare/v1.1.1...v1.1.2) (2024-08-30)
 
 
