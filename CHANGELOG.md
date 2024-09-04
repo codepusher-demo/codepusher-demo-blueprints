@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/codepusher-demo/codepusher-demo-blueprints/compare/v1.1.3...v1.1.4) (2024-09-04)
+
+
+### Bug Fixes
+
+* **deploy:** fix deployment ([d0deed4](https://github.com/codepusher-demo/codepusher-demo-blueprints/commit/d0deed478a2ed39a0f60af899119222525573a0d))
+
 ## [1.1.3](https://github.com/codepusher-demo/codepusher-demo-blueprints/compare/v1.1.2...v1.1.3) (2024-09-02)
 
 
