@@ -11,7 +11,7 @@ spec:
   templateUrl: "https://github.com/codepusher-demo/codepusher-demo-blueprints/blob/main/github/chart/template"
   provider: aws
   owner: codepusher-team
-  type: chart
+  type: deployment
   engine:
     type: github
     version: "1.0.0"
@@ -20,10 +20,12 @@ spec:
       properties:
         clusterName:
           type: select
-          items: list:cluster
+          items: 
+            type: list:cluster
         serviceName:
           type: select 
-          items: list:service
+          items: 
+            type: list:service
         imageRegistryName:
           type: get:cluster:registryName
           autofill: true
