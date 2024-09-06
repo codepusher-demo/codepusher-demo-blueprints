@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/codepusher-demo/codepusher-demo-blueprints/compare/v1.1.5...v1.1.6) (2024-09-06)
+
+
+### Bug Fixes
+
+* **deploy:** add title in template ([59ecb29](https://github.com/codepusher-demo/codepusher-demo-blueprints/commit/59ecb292e611f89cfcf1a76189e038d8404e9285))
+
 ## [1.1.5](https://github.com/codepusher-demo/codepusher-demo-blueprints/compare/v1.1.4...v1.1.5) (2024-09-04)
 
 
